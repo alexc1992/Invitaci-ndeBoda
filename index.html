@@ -103,6 +103,44 @@
         alert("¡Gracias por confirmar tu asistencia!");
     });
 </script>
+<form id="confirmarAsistencia">
+  <input type="text" name="nombre" placeholder="Tu nombre" required>
+  
+  <select name="asistencia">
+    <option value="Sí">Sí, asistiré</option>
+    <option value="No">No podré asistir</option>
+  </select>
+
+  <input type="number" name="acompanantes" placeholder="Número de acompañantes" min="0">
+
+  <select name="menu">
+    <option value="Normal">Menú Normal</option>
+    <option value="Vegetariano/Vegano">Vegetariano/Vegano</option>
+  </select>
+
+  <textarea name="comentarios" placeholder="Comentarios adicionales"></textarea>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+document.getElementById("confirmarAsistencia").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = {};
+  formData.forEach((value, key) => { data[key] = value; });
+
+  fetch("https://script.google.com/macros/s/AKfycbw3Bla4Z94l4nRl031CAr9Ya8BW_s8UDwlWeERzzdM3Amd1h3WOxz4nsEaU7RhCSUtI/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then(response => response.text())
+  .then(data => alert("¡Respuesta enviada con éxito!"))
+  .catch(error => alert("Error al enviar la respuesta"));
+});
+</script>
 
 </body>
 </html>
