@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Invitación de Boda</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #ff7f50;
+            color: white;
+            padding: 20px;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 20px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .details, .rsvp-form, .gallery {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .details p, .rsvp-form p {
+            font-size: 1.1em;
+        }
+        .rsvp-form input, .rsvp-form button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 1em;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #ff7f50;
+            color: white;
+            padding: 10px;
+            font-size: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>¡Nos Casamos!</h1>
+    <p>Invitación de Boda de Álex & Marta</p>
+</header>
+
+<div class="content">
+    <section class="details">
+        <h2>Detalles del Evento</h2>
+        <p><strong>Fecha:</strong> 30/08/2025</p>
+        <p><strong>Hora:</strong> 18:00</p>
+        <p><strong>Lugar:</strong> Casa Gumira</p>
+        <p><strong>Dirección:</strong> Casa Gumira, 08612 Montmajor</p>
+    </section>
+
+    <section class="rsvp-form">
+        <h2>Confirmar Asistencia</h2>
+        <form id="rsvp-form">
+            <p>Por favor, confirma tu asistencia a nuestra boda:</p>
+            <input type="text" id="nombre" placeholder="Tu Nombre" required>
+            <input type="email" id="email" placeholder="Tu Correo Electrónico" required>
+            <button type="submit">Confirmar Asistencia</button>
+        </form>
+    </section>
+
+    <section class="gallery">
+        <h2>Galería</h2>
+        <img src="foto1.jpg" alt="Foto de los novios">
+        <img src="foto2.jpg" alt="Foto de los novios">
+        <img src="foto3.jpg" alt="Foto de los novios">
+    </section>
+</div>
+
+<footer>
+    <p>¡Esperamos verte en nuestra boda! - Álex & Marta</p>
+</footer>
+
+<script>
+    document.getElementById("rsvp-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("¡Gracias por confirmar tu asistencia!");
+    });
+</script>
+
+</body>
+</html>
